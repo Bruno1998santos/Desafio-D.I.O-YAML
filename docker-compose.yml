@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd
+    volumes:
+      - /data/apache:/usr/local/apache2/htdocs
+    ports:
+      - 8080:80
+    networks:
+      - minha-rede
+networks:
+  minha-rede:
+    driver: bridge
+
